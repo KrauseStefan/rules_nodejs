@@ -17,7 +17,6 @@
 Fulfills similar role as the package.json file.
 """
 
-load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 def rules_nodejs_dev_dependencies():
@@ -120,17 +119,17 @@ def rules_nodejs_dev_dependencies():
     )
 
     _maybe(
-        git_repository,
+        http_archive,
         name = "build_bazel_rules_typescript",
-        commit = "10a5a86885f95ab788fd841ade47b6a16e0c13d6",
+        strip_prefix = "rules_typescript-10a5a86885f95ab788fd841ade47b6a16e0c13d6",
+        urls = ["https://github.com/bazelbuild/rules_typescript/archive/10a5a86885f95ab788fd841ade47b6a16e0c13d6.tar.gz"],
+        sha256 = "a7ed427d85cb476fb8de2e3b81d8d3c20380ba255f145a7136ef72e20b56fd7c",
         patches = [
             "@build_bazel_rules_nodejs//:rules_typescript_pr_494.patch",
             "@build_bazel_rules_nodejs//:rules_typescript_pr_496.patch",
             "@build_bazel_rules_nodejs//:rules_typescript_pr_499.patch",
             "@build_bazel_rules_nodejs//:rules_typescript_pr_508.patch",
         ],
-        remote = "http://github.com/bazelbuild/rules_typescript.git",
-        shallow_since = "1582757372 -0800",
     )
 
 def _maybe(repo_rule, name, **kwargs):
