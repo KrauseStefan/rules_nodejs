@@ -18,6 +18,7 @@ ng_ts_library(
         "todos.component.html",
         ":todos-styles",
     ],
+    module_name = "@lib/todos",
     tsconfig = "//src:tsconfig.json",
     deps = [
         "//src/lib/todos/reducers",
