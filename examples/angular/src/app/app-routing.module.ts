@@ -7,21 +7,16 @@ import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 // IMPORTANT: this array is auto-updated by script/generator
 // dont rename the 'routes' variable.
 const routes: Routes = [
-  {
-    path: '',
-    pathMatch: 'full',
-    loadChildren: () => import('./home/home').then(m => m.HomeModule)
-  },
+  {path: '', pathMatch: 'full', loadChildren: () => import('./home/home').then(m => m.HomeModule)},
   {
     path: 'hello',
     pathMatch: 'full',
-    loadChildren: () =>
-        import('./hello-world/hello-world.module').then(m => m.HelloWorldModule)
+    loadChildren: () => import('./hello-world/hello-world.module').then(m => m.HelloWorldModule)
   },
   {
     path: 'todos',
     pathMatch: 'full',
-    loadChildren: () => import('./todos/todos.module').then(m => m.TodosModule)
+    loadChildren: () => import('./todos/todos-app.module').then(m => m.TodosAppModule)
   }
 ];
 

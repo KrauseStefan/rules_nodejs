@@ -14,7 +14,7 @@ ng_ts_library(
         "//src/app/hello-world",
         "//src/app/home",
         "//src/app/todos",
-        "//src/app/todos/reducers",
+        "//src/lib/todos/reducers",
         "//src/shared/material",
         "@npm//@angular/common",
         "@npm//@angular/core",
