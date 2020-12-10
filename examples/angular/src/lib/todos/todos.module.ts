@@ -8,11 +8,7 @@ import {TodosComponent} from './todos.component';
 
 @NgModule({
   declarations: [TodosComponent],
-  imports: [
-    CommonModule, FormsModule, RouterModule, MaterialModule,
-    RouterModule.forChild([{path: '', component: TodosComponent}])
-  ],
-
+  exports: [TodosComponent],
+  imports: [CommonModule, FormsModule, RouterModule, MaterialModule],
 })
-export class TodosModule {
-}
+export class TodosModule {}

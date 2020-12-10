@@ -5,9 +5,7 @@ export const DELETE_TODO = 'DELETE_TODO';
 export const UPDATE_TODO = 'UPDATE_TODO';
 export const TOGGLE_DONE = 'TOGGLE_DONE';
 
-export interface ActionWithPayload<T> extends Action {
-  payload: T;
-}
+export interface ActionWithPayload<T> extends Action { payload: T; }
 
 export interface TodoPayload {
   index?: number;
